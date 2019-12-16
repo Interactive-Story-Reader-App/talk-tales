@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { StoryI } from './story';
+import { Story } from './story';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  getStories(): Observable<StoryI[]>{
-    return this.http.get<StoryI[]>(this._url);
+  getStories(): Observable<Story[]>{
+    return this.http.get<Story[]>(this._url);
 }
 
   ngOnInit() {
