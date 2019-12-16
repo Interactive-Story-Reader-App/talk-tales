@@ -8,7 +8,7 @@
 }
 
 .home-bg-img{
-    background: linear-gradient(to right bottom, rgba(46, 83, 92, 0.4), rgba(40, 180, 133, 0.4)), url('../../../../assets/images/talktales.jpg');
+    background: linear-gradient(to right bottom, rgba(46, 83, 92, 0.4), rgba(40, 180, 133, 0.4)), url('../../../assets/images/talktales.jpg');
     background-position: top;
     background-size: cover;
     width: 100%;
