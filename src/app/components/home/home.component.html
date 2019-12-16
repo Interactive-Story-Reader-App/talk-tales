@@ -23,43 +23,13 @@
         <div class="card p-3">
             <h3 class="text-muted text-center py-2 my-3 border-bottom">ALL STORIES</h3>
             <div class="row mx-auto">
-                <div class="col my-2">
+                <div class="col my-2" *ngFor="let story of stories">
                     <div class="card" style="width: 16rem;">
                         <img class="card-img-top p-1" src="../../../../assets/images/cover3.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <a href="#"><h6 class="card-title">Her Majesty</h6></a>
-                          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, saepe?</p>
-                          <a href="#" class="btn btn-raised btn-primary">Read Story</a>
-                        </div>
-                      </div>
-                </div>
-                <div class="col my-2">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top p-1" src="../../../../assets/images/cover3.jpg" alt="Card image cap">
-                        <div class="card-body">
-                          <a href="#"><h6 class="card-title">Dog and Cat</h6></a>
-                          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, saepe?</p>
-                          <a href="#" class="btn btn-raised btn-primary">Read Story</a>
-                        </div>
-                      </div>
-                </div>
-                <div class="col my-2">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top p-1" src="../../../../assets/images/cover3.jpg" alt="Card image cap">
-                        <div class="card-body">
-                          <a href="#"><h6 class="card-title">The Jungle Boy</h6></a>
-                          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, saepe?</p>
-                          <a href="#" class="btn btn-raised btn-primary">Read Story</a>
-                        </div>
-                      </div>
-                </div>
-                <div class="col my-2">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top p-1" src="../../../../assets/images/cover3.jpg" alt="Card image cap">
-                        <div class="card-body">
-                          <a href="#"><h6 class="card-title">The Golden Castle</h6></a>
-                          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, saepe?</p>
-                          <a href="#" class="btn btn-raised btn-primary">Read Story</a>
+                          <a href="#"><h6 class="card-title">{{ story.story_title }}</h6></a>
+                          <p class="card-text">{{ story.story_description.substr(0, 100) }}...</p>
+                          <a routerLink="/reader" class="btn btn-raised btn-primary">Read Story</a>
                         </div>
                       </div>
                 </div>
