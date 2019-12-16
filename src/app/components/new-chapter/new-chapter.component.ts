@@ -9,7 +9,12 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class NewChapterComponent implements OnInit {
 
   chapterForm = new FormGroup({
-    customer_name: new FormControl('')
+    story_title: new FormControl(''),
+    story_description: new FormControl(''),
+    category_id: new FormControl('fee68f8c7dbde6d2bcd837045a005e51'),
+    author_id: new FormControl('fee68f8c7dbde6d2bcd837045a0092a2'),
+    story_photo: new FormControl(),
+    story_path: new FormControl([])
   });
 
   constructor() { }

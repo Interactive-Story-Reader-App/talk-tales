@@ -5,5 +5,6 @@ export interface Story {
     story_description: string,
     category_id: string,
     author_id: string,
-    story_photo: string
+    story_photo: string,
+    story_path: []
 }
