@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StoryService } from './story.service';
+import { HttpClient } from '@angular/common/http';
+import { StoryI } from './story';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +10,19 @@ import { StoryService } from './story.service';
 })
 export class HomeComponent implements OnInit {
 
-  public stories = [];
+    private _url: string = "https://talk-tales-stories.herokuapp.com/api/v1/stories";
+    public stories = [];
 
-  constructor(private _storyService: StoryService) { }
+
+  constructor(private http: HttpClient) { }
+
+  getStories(): Observable<StoryI[]>{
+    return this.http.get<StoryI[]>(this._url);
+}
 
   ngOnInit() {
-    this._storyService.getAllStories()
-    .subscribe(story => this.stories = story )
+    this.getStories()
+    .subscribe(data => this.stories = data )
   }
 
 }
