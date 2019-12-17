@@ -27,7 +27,7 @@
     <div class="container">
         <div class="card my-3">
             <div class="w-75 mx-auto">
-                <form [formGroup]="chapterForm">
+                <form [formGroup]="chapterForm" (ngSubmit)="onSubmit()">
                     <div class="d-flex justify-content-between mt-3">
                         <div class="form-group p-0 d-flex">
                             <select id="gender" class="custom-select bg-light w-100 mr-2">
@@ -54,17 +54,17 @@
 
                     <div class="form-group mt-4">
                         <label for="exampleChapterInput">Chapter Title</label>
-                        <input type="text" class="form-control w-50" id="exampleChapterInput" aria-describedby="emailHelp" placeholder="Chapter title...">
+                        <input formControlName="chapter_title" type="text" class="form-control w-50" id="exampleChapterInput" aria-describedby="emailHelp" placeholder="Chapter title...">
                         <small id="emailHelp" class="form-text text-muted">Enter the title of your Chapter in the field above</small>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Chapter Content</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1"  rows="3"></textarea>
+                        <textarea formControlName="chapter_content" class="form-control" id="exampleFormControlTextarea1"  rows="3"></textarea>
                     </div>
 
                     <div class="my-2 text-right">
-                        <button type="button" class="btn btn-raised btn-info w-25">Add Chapter</button>
+                        <input type="submit" class="btn btn-raised btn-info w-25" value="Add Chapter">
                     </div>
                 </form>
             </div>

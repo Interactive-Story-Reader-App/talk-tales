@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {path: '', redirectTo: '/index', pathMatch: 'full'},
   {path: 'index', component: HomeComponent},
-  {path: 'reader', component: ChapterComponent},
+  {path: 'stories/:id', component: ChapterComponent},
   {path: 'new_story', component: NewStoryComponent},
   {path: 'new_chapter', component: NewChapterComponent},
 ];

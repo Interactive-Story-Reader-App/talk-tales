@@ -25,9 +25,9 @@
             <div class="row mx-auto">
                 <div class="col my-2" *ngFor="let story of stories">
                     <div class="card" style="width: 16rem;">
-                         <a routerLink="/reader"><img class="card-img-top p-1" src="../../../../assets/images/cover3.jpg" alt="Card image cap"></a>
+                         <a routerLink="/stories/{{story._id}}"><img class="card-img-top p-1" src="../../../../assets/images/cover3.jpg" alt="Card image cap"></a>
                         <div class="card-body">
-                          <a routerLink="/reader"><h6 class="card-title">{{ story.story_title }}</h6></a>
+                          <a routerLink="/stories/{{story._id}}"><h6 class="card-title">{{ story.story_title }}</h6></a>
                           <p class="card-text">{{ story.story_description.substr(0, 100) }}...</p>
                         </div>
                       </div>
