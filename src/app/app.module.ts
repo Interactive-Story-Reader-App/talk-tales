@@ -9,6 +9,9 @@ import { NewStoryComponent } from './components/new-story/new-story.component';
 import { NewChapterComponent } from './components/new-chapter/new-chapter.component';
 import { ChapterComponent } from './components/chapter/chapter.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthorsComponent } from './components/authors/authors.component';
+import { LoginComponent } from './components/login/login.component';
+import { RedirectComponent } from './components/redirect/redirect.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HomeComponent } from './components/home/home.component';
     NewStoryComponent,
     NewChapterComponent,
     ChapterComponent,
-    HomeComponent
+    HomeComponent,
+    AuthorsComponent,
+    LoginComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,
