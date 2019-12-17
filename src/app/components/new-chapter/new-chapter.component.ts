@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Chapter} from './chapter';
+import {Chapter} from '../home/chapter';
 
 @Component({
   selector: 'app-new-chapter',
