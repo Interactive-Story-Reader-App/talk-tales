@@ -11,7 +11,7 @@ import { PublishComponent } from './components/publish/publish.component';
 import { UnpublishComponent } from './components/unpublish/unpublish.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/index', pathMatch: 'full'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'authors/:id', component: AuthorsComponent},
   {path: 'index', component: HomeComponent},

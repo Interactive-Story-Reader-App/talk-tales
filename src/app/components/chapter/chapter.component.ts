@@ -4,6 +4,7 @@ import { Observable, forkJoin, of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from '@angular/router';
 import {Chapter} from '../home/chapter';
+import {Story} from '../home/story';
 
 @Component({
   selector: 'app-chapter',
@@ -24,6 +25,7 @@ export class ChapterComponent implements OnInit {
 
 
   public chapters = [];
+  
   public currentChapter = {
     chapter_title: '',
     chapter_content: '',
@@ -34,11 +36,20 @@ export class ChapterComponent implements OnInit {
   public count = 0;
 
   private _url: string = "https://talk-tales-chapters.herokuapp.com/api/v1/chapters/";
+  private _story_url: string = "https://talk-tales-stories.herokuapp.com/api/v1/stories/";
+
+  story = {};
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.getAllChapters();
+    
+    this.getStory().subscribe(data => this.story = data);
+  }
+
+  getStory(): Observable<Story>{
+    return this.http.get<Story>(this._story_url + this.route.snapshot.paramMap.get('id'));
   }
 
   getChapter(id: string): Observable<Chapter>{
@@ -52,6 +63,7 @@ export class ChapterComponent implements OnInit {
       })
     })
     console.log(this.chapters);
+    this.currentChapter = this.chapters[0];
   }
 
   nextChapter(){

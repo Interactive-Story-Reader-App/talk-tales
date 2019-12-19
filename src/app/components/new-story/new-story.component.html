@@ -35,9 +35,11 @@
                     </div>
                     <small id="emailHelp" class="form-text text-muted">Write a Brief description about your story</small>
 
+                    <input style="display: none" type="file" accept="image/*" (change)="onFileChanged($event)" #fileInput>
+                    
                     <div class="my-2 text-right">
                         <small class="text-muted mx-3">Upload a cover image for your story</small>
-                        <button type="button" class="btn btn-raised btn-secondary">Upload Image</button>
+                        <button (click)="fileInput.click()" type="button" class="btn btn-raised btn-secondary">Upload Image</button>
                     </div>
 
                     <input type="submit" class="btn btn-raised btn-info w-25" value="Save Story">

@@ -23,6 +23,8 @@ export class NewStoryComponent implements OnInit {
     status: new FormControl('unpublished')
   });
 
+  selectedFile: File
+
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -37,6 +39,11 @@ export class NewStoryComponent implements OnInit {
 
   addNewStory(story: Story): Observable<Story>{
     return this.http.post<Story>(this._url, story);
+  }
+
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0]
+    console.log(this.selectedFile)
   }
 
 }

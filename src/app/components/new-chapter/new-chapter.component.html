@@ -48,11 +48,16 @@
                             </select>
                             <button (click)="addDeps()" type="button" class="btn btn-secondary btn-raised"> + </button>
                         </div>
+
+                        <input style="display: none" type="file" accept="image/*" (change)="onFileChanged($event)" #fileInput>
+                        <input style="display: none" type="file" accept="audio/*" (change)="onFileChanged($event)" #audioInput>
+                        <input style="display: none" type="file" accept="video/*" (change)="onFileChanged($event)" #videoInput>
+
                         <div class="w-25">
                             <div class="d-flex justify-content-around">
-                                <a href="" class="btn btn-ligth text-muted border-right"><i class="fas fa-image fa-2x"></i></a>
-                                <a href="" class="btn btn-ligth text-muted border-right"><i class="fas fa-volume-up fa-2x"></i></a>
-                                <a href="" class="btn btn-ligth text-muted "><i class="fab fa-youtube fa-2x"></i></a>
+                                <button (click)="fileInput.click()" class="btn btn-ligth text-muted border-right"><i class="fas fa-image fa-2x"></i></button>
+                                <button (click)="audioInput.click()" class="btn btn-ligth text-muted border-right"><i class="fas fa-volume-up fa-2x"></i></button>
+                                <button (click)="videoInput.click()" class="btn btn-ligth text-muted "><i class="fab fa-youtube fa-2x"></i></button>
                             </div>
                         </div>
                     </div>

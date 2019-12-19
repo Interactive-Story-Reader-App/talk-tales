@@ -26,6 +26,8 @@ export class NewChapterComponent implements OnInit {
   public aid = '';
   public deps = [];
 
+  selectedFile: File
+
   chapterForm = new FormGroup({
     story_id: new FormControl(this.route.snapshot.paramMap.get('id')),
     chapter_title: new FormControl(''),
@@ -98,6 +100,11 @@ export class NewChapterComponent implements OnInit {
 
   onContentChange(content: string){
     this.chapterToAdd.chapter_content = content
+  }
+
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0]
+    console.log(this.selectedFile)
   }
 
 

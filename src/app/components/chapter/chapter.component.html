@@ -12,25 +12,25 @@
 
     <div class="container my-3">
         <div class="card px-2 py-4 text-center text-muted">
-            <h4><span class="text-warning">Story Title: </span>Story Title here</h4>
+            <h4><span class="text-warning">Story Title: </span>{{story.story_title}}</h4>
         </div>
         
     </div>
 
-    <div class="container mb-5">
+    <div class="container mb-3 py-3">
         <p class="display-3 cTitle text-muted text-center border-bottom border-secondary py-1">{{currentChapter.chapter_title}}</p>
         <div class="row">
-            <div class="col-8 h5 chapter-content">
+
+            <div class="col-7 h5 chapter-content border border-primary mx-2">
                {{ currentChapter.chapter_content }} 
                 <div class="text-center my-4">
                     <button (click)="nextChapter()" class="btn btn-success btn-raised w-50"> NEXT CHAPTER <i class="fas fa-arrow-circle-right"></i> </button>
                 </div>
             </div>
-            <div class="col-4 rounded border border-secondary d-flex align-items-center justify-content-center bg-light">
-                <div>
-                    <a href="#">Open Image of chapter choice</a><br>
-                    <a href="#">Play Music of Jungle Birds</a><br>
-                    <a href="#">Play video of a Moving Pirate Ship</a>
+
+            <div class="col-4 rounded border border-secondary d-flex align-items-top justify-content-center bg-light">
+                <div class="py-3">
+                    <img class="img-thumbnail" src="../../../assets/images/{{currentChapter._id}}.jpg" width="100%" alt="">
                 </div>
                 
             </div>
