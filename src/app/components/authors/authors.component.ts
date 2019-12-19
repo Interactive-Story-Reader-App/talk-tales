@@ -35,7 +35,7 @@ export class AuthorsComponent implements OnInit {
   private _url: string = "https://talk-tales-users.herokuapp.com/api/v1/users/";
   private _story_url: string = "https://talk-tales-stories.herokuapp.com/api/v1/stories/";
 
-  private aid = '';
+  public aid = '';
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {

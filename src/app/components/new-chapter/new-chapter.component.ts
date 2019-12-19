@@ -20,7 +20,9 @@ export class NewChapterComponent implements OnInit {
 
   public chapters = [];
   public numberOfChapters = 0;
-  public story = {};
+  public story = {
+    story_title: ''
+  };
   public aid = '';
   public deps = [];
 

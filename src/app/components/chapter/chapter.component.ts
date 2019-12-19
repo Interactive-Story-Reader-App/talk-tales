@@ -24,7 +24,10 @@ export class ChapterComponent implements OnInit {
 
 
   public chapters = [];
-  public currentChapter = {};
+  public currentChapter = {
+    chapter_title: '',
+    chapter_content: '',
+  };
 
   public trackPath = 0;
 
