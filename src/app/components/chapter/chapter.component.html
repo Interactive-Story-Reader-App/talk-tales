@@ -18,14 +18,12 @@
     </div>
 
     <div class="container mb-5">
-        <p class="display-3 cTitle text-muted text-center border-bottom border-secondary py-1">Chapter 1</p>
+        <p class="display-3 cTitle text-muted text-center border-bottom border-secondary py-1">{{currentChapter.chapter_title}}</p>
         <div class="row">
             <div class="col-8 h5 chapter-content">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dolores deleniti, excepturi cumque soluta eos quibusdam pariatur officia, eveniet consequatur doloremque inventore perspiciatis autem provident reiciendis obcaecati officiis. Nobis, debitis.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dolores deleniti, excepturi cumque soluta eos quibusdam pariatur officia, eveniet consequatur doloremque inventore perspiciatis autem provident reiciendis obcaecati officiis. Nobis, debitis.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dolores deleniti, excepturi cumque soluta eos quibusdam pariatur officia, eveniet consequatur doloremque inventore perspiciatis autem provident reiciendis obcaecati officiis. Nobis, debitis.
+               {{ currentChapter.chapter_content }} 
                 <div class="text-center my-4">
-                    <a class="btn btn-success btn-raised w-50"> NEXT CHAPTER <i class="fas fa-arrow-circle-right"></i> </a>
+                    <button (click)="nextChapter()" class="btn btn-success btn-raised w-50"> NEXT CHAPTER <i class="fas fa-arrow-circle-right"></i> </button>
                 </div>
             </div>
             <div class="col-4 rounded border border-secondary d-flex align-items-center justify-content-center bg-light">

@@ -1,0 +1,11 @@
+.stat{
+    width: 150px;
+}
+
+.published{
+    color:  rgb(33, 161, 39);
+}
+
+.unpublished{
+    color: rgb(250, 86, 10);
+}

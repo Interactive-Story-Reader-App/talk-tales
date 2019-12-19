@@ -3,8 +3,7 @@ export interface Story {
     _rev: string,
     story_title: string,
     story_description: string,
-    category_id: string,
+    story_category: string,
     author_id: string,
-    story_photo: string,
-    story_path: []
+    story_photo: string
 }

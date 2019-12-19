@@ -1,0 +1,32 @@
+<div class="loginPage">
+    <div class="card" style="width: 20rem; height: 400px;">
+        <div class="bg-light display-4 text-muted text-center py-3">
+            User Login
+        </div>
+
+        <div class="card-body">
+            <form [formGroup]="loginForm">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input formControlName="user_email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="text-right">
+                    <button (click)="onClick()" type="button" class="btn btn-primary btn-outline"> Login</button>
+                </div>
+            </form>
+
+            <div class="facebook-login my-3">
+                <button (click)="signInWithFB()" type="button" class="btn btn-raised btn-info btn-block"><i class="fab fa-facebook-square"></i> Login with Facebook</button>
+            </div>
+
+            <div class="google-login">
+                    <button (click)="signInWithGoogle()" type="button" class="btn btn-raised btn-danger btn-block"><i class="fab fa-google mr-3"></i>Login with Google</button>
+            </div>
+
+            <div class="text-center my-3">
+                <a href="">Forgotten Password?</a>
+            </div>
+        </div>
+        
+    </div>
+</div>

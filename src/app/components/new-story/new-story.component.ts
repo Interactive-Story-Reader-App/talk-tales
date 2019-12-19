@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Story} from '../home/story';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-new-story',
@@ -16,15 +17,16 @@ export class NewStoryComponent implements OnInit {
   storyForm = new FormGroup({
     story_title: new FormControl(''),
     story_description: new FormControl(''),
-    category_id: new FormControl('fee68f8c7dbde6d2bcd837045a005e51'),
-    author_id: new FormControl('fee68f8c7dbde6d2bcd837045a0092a2'),
+    story_category: new FormControl(''),
+    author_id: new FormControl(this.route.snapshot.paramMap.get('id')),
     story_photo: new FormControl(),
-    story_path: new FormControl([])
+    status: new FormControl('unpublished')
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.storyForm.value)
   }
 
   onSubmit(){

@@ -26,3 +26,6 @@
     transition: all .5s;
     -webkit-text-stroke: 1px white;
 }
+.acc{
+    display: inline-block;
+}

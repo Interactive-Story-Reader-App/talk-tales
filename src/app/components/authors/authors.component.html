@@ -1,0 +1,115 @@
+<div class="body">
+
+    <div class="card">
+        <div class="d-flex justify-content-between align-items-center py-2 mx-4">
+            <h5 class="text-muted">Dashboard</h5>
+            <h5 class="text-info">TALK TALES</h5>
+            <p class="text-muted"><span class="text-info">Author:</span> {{ user.user_name}}</p>
+        </div>
+    </div>
+
+    <div class="container my-3">
+        <div class="display-2 text-muted text-center"> My Stories</div>
+    </div>
+
+    <div class=" container text-right">
+        <span class="small text-muted mx-2">Add new story</span> 
+        <a routerLink="/authors/{{user._id}}/story"><button type="button" class="btn btn-info bmd-btn-fab">
+            <i class="material-icons">+</i>
+        </button></a>
+    </div>
+
+    <div class="container">
+        <div *ngFor="let story of stories" class="card py-2 my-3">
+            <div class="row">
+                <div class="col-3">
+                    <img src="../../../assets/images/cover3.jpg" class="img-thumbnail" width="200px" alt="">
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-8"><a routerLink="/chapters/story/{{ story._id }}/{{aid}}"><h3>{{ story.story_title}}</h3></a></div>
+                    </div>
+                    
+                    <div class="py-2 border-bottom">{{ story.story_description }}</div>
+                    <div class="text-muted">
+                        <a href="" class="btn btn-secondary border-right pr-3"><i class="fas fa-edit"></i></a>
+                        <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <div class="text-center">
+                        <div class="my-3">Status: <span class="badge badge-pill {{ story.status }}">{{ story.status }}</span></div>
+                            <button data-toggle="modal" data-target="#publishModal" *ngIf="story.status == 'unpublished'; else elseBlock" (click)="publish(story._id, story.story_title, story.story_description, story.story_category, story.author_id, story.status)" class="btn btn-success btn-outline">Publish</button>
+                            <ng-template #elseBlock>
+                                <button data-toggle="modal" data-target="#unpublishModal" (click)="unpublish(story._id, story.story_title, story.story_description, story.story_category, story.author_id, story.status)" class="btn btn-danger btn-outline">Unpublish</button>
+                            </ng-template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Deleting Story</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <h6 class="text-danger">Are you sure you want to Delete</h6>
+                    <h2> {{ story.story_title }}</h2>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Publishing Story</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <h4 class="text-success">Story published</h4>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="unpublishModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">unpublishing Story</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <h2 class="text-primary">Story Unpublished</h2>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
