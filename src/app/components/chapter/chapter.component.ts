@@ -27,6 +27,7 @@ export class ChapterComponent implements OnInit {
   public chapters = [];
   
   public currentChapter = {
+    _id: '',
     chapter_title: '',
     chapter_content: '',
   };
@@ -38,7 +39,9 @@ export class ChapterComponent implements OnInit {
   private _url: string = "https://talk-tales-chapters.herokuapp.com/api/v1/chapters/";
   private _story_url: string = "https://talk-tales-stories.herokuapp.com/api/v1/stories/";
 
-  story = {};
+  story = {
+    story_title: ''
+  };
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
