@@ -77,6 +77,16 @@ export class AuthorsComponent implements OnInit {
     return this.http.put<Story>(this._story_url + id, update);
   }
 
+  deleteStory(id: string, _rev: string): Observable<Story>{
+    return this.http.delete<Story>(this._story_url + id + "/" + _rev);
+  }
+
+  deletingStory(id: string, _rev: string ){
+    this.deleteStory(id, _rev).subscribe()
+    console.log(id, _rev);
+    this.ngOnInit();
+  }
+
   storyObject(title: string, desc: string, cat: string, aid: string, status: string){
     this.story.story_title = title;
     this.story.story_description = desc;

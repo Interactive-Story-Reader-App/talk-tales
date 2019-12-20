@@ -91,7 +91,7 @@ export class NewChapterComponent implements OnInit {
   addChapter(){
     this.newChapter().subscribe();
     console.log('Chapter Added...')
-    this.doGet();
+    this.ngOnInit();
   }
 
   onTitleChange(title: string){
