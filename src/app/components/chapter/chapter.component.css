@@ -36,7 +36,12 @@
 }
 
 .startbg{
-    background-color: #ebe6eb;
+    background-color: #f7f7f7;
     background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+    
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.cc{
+    font-family: 'Kalam', cursive;
+    font-size: larger;
 }
