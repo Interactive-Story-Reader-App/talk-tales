@@ -12,6 +12,7 @@ import {Story} from '../home/story';
   styleUrls: ['./chapter.component.css']
 })
 export class ChapterComponent implements OnInit {
+  public start = '0';
 
   public path = [
   "233a4c4eb39f4265af14c21f0394931a",
@@ -22,7 +23,6 @@ export class ChapterComponent implements OnInit {
    "a7cbd12bc1a544b4bad32516b332de61",
    "a9d653043e47498ba8ca159312a1945a"
   ];
-
 
   public chapters = [];
   
@@ -47,7 +47,6 @@ export class ChapterComponent implements OnInit {
 
   ngOnInit() {
     this.getAllChapters();
-    
     this.getStory().subscribe(data => this.story = data);
   }
 
@@ -70,6 +69,7 @@ export class ChapterComponent implements OnInit {
   }
 
   nextChapter(){
+    this.start += 1;
     if(this.trackPath == this.chapters.length){
       console.log("End of Story");
       this.trackPath = 0;

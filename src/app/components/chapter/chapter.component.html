@@ -1,4 +1,5 @@
 
+
 <div class="bg">
     <div class="text-right py-3 px-5">
         <a routerLink="/index">Home</a>
@@ -20,8 +21,15 @@
         </div>
     </div>
     
+    <div *ngIf="start == '0'" style="height: 300px;" class=" startbg container mb-3 py-3 text-center bg-light d-flex justify-content-center align-items-center">
+        <div>
+            <div class="display-3">Welcome to {{story.story_title}} story</div>
+            <p>We Hope you have an Interractive Experience. <span class="text-warning">Take Note of Prompts</span></p>
+            <button (click)="nextChapter()" data-toggle="modal" data-target="#startModalCenter" style="height: 70px; font-size: larger;" class="btn btn-success btn-raised mt-5 w-50"> START READING <i class="fas fa-arrow-circle-right"></i> </button>
+        </div>
+    </div>
 
-    <div class="container mb-3 py-3">
+    <div *ngIf="start != '0'" class="container mb-3 py-5">
         <p class="display-3 cTitle text-muted text-center border-bottom border-secondary py-1">{{currentChapter.chapter_title}}</p>
         <div class="row">
 
@@ -29,6 +37,11 @@
                 <div class="py-3" *ngIf="currentChapter._id == '6b5eabbd4d1f4effbba18e33ed94cdee' ">
                     <span class="bg-primary text-light py-2 px-3 rounded mr-3"> THIS CHAPTER HAS A VIDEO => </span> <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-info btn-raised">Open Chapter Video</button> 
                 </div>
+
+                <div class="py-3" *ngIf="currentChapter._id == '4619a309fc6249709d3d8149ad775ed5' ">
+                    <span class="bg-primary text-light py-2 px-3 rounded mr-3">YEY!!! IMAGE FOR THIS CHAPTER => </span> <button data-toggle="modal" data-target="#imageModalCenter" class="btn btn-info btn-raised">Open Chapter Image</button> 
+                </div>
+                
                {{ currentChapter.chapter_content }} 
                 <div class="text-center my-4">
                     <button (click)="nextChapter()" class="btn btn-success btn-raised w-50"> NEXT CHAPTER <i class="fas fa-arrow-circle-right"></i> </button>
@@ -70,6 +83,78 @@
             </div>
         </div>
     <!-- End of Delete Modal -->
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="imageModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Chapter Photo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <img src="../../../assets/images/castle.jpg" width="80%" class="text-center img-thumbnail" alt="">
+            <h2> </h2>
+            </div>
+            <div class="modal-footer">
+            <!-- <button  type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button> -->
+            </div>
+        </div>
+        </div>
+    </div>
+<!-- End of Delete Modal -->
+
+<!-- Delete Modal -->
+<div class="modal fade" id="storyEndModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Chapter Photo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="../../../assets/images/castle.jpg" width="80%" class="text-center img-thumbnail" alt="">
+        <h2> </h2>
+        </div>
+        <div class="modal-footer">
+        <!-- <button  type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button> -->
+        </div>
+    </div>
+    </div>
+</div>
+<!-- End of Delete Modal -->
+
+<!-- Delete Modal -->
+<div class="modal fade" id="startModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Happy to Start?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body text-center">
+            <img src="https://i.gifer.com/origin/8d/8d1cef2b73127f2350249eb1d6e28fa9_w200.gif" width="150px" class="text-center img-thumbnail" alt="">
+            <span class="h2 text-primary mx-3">LET'S DO IT!!!</span>
+        <h2> </h2>
+        </div>
+        <div class="modal-footer">
+        <button  type="button" class="btn btn-secondary btn-outline" data-dismiss="modal">Yes</button>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- End of Delete Modal -->
+
+<!-- https://i.gifer.com/origin/8d/8d1cef2b73127f2350249eb1d6e28fa9_w200.gif -->
+<!-- https://www.google.com/url?sa=i&url=https%3A%2F%2Fgifer.com%2Fen%2Fgifs%2Fhappy&psig=AOvVaw3t3hskok2H-GcuWVm6ihrl&ust=1576925306074000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPi379eGxOYCFQAAAAAdAAAAABAO -->
 
 </div>
 
